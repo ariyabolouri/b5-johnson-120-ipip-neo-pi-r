@@ -1,6 +1,18 @@
 const { knuthShuffle } = require('knuth-shuffle')
 const languages = require('./data/languages.json')
 
+function languageSort (a, b) {
+  if (a.text < b.text) {
+    return -1
+  }
+  if (a.text > b.text) {
+    return 1
+  }
+  return 0
+}
+
+languages.sort(languageSort)
+
 module.exports.getItems = (lang = 'en', shuffle = false) => {
   let choices, questions
   try {
@@ -16,7 +28,7 @@ module.exports.getItems = (lang = 'en', shuffle = false) => {
 
 module.exports.getInfo = () => (
   {
-    name: 'Johnson\'s IPIP NEO-PI-R',
+    name: "Johnson's IPIP NEO-PI-R",
     id: 'johnson-120-ipip-neo-pi-r',
     shortId: 'b5-120',
     time: 10,
@@ -25,3 +37,23 @@ module.exports.getInfo = () => (
     languages
   }
 )
+
+module.exports.getChoices = (lang = 'en') => {
+  let choices
+  try {
+    choices = require(`./data/${lang}/choices`)
+  } catch (error) {
+    throw new Error('Choices not found. Try another language input.')
+  }
+  return choices
+}
+
+module.exports.getQuestions = (lang = 'en') => {
+  let questions
+  try {
+    questions = require(`./data/${lang}/questions`)
+  } catch (error) {
+    throw new Error('Questions not found. Try another language input.')
+  }
+  return questions
+}

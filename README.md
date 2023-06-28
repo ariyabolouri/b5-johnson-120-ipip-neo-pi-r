@@ -1,10 +1,9 @@
-[![Build Status](https://travis-ci.org/Alheimsins/b5-johnson-120-ipip-neo-pi-r.svg?branch=master)](https://travis-ci.org/Alheimsins/b5-johnson-120-ipip-neo-pi-r)
-[![Coverage Status](https://coveralls.io/repos/Alheimsins/b5-johnson-120-ipip-neo-pi-r/badge.svg?branch=master&service=github)](https://coveralls.io/github/Alheimsins/b5-johnson-120-ipip-neo-pi-r?branch=master)
+[![Coverage Status](https://coveralls.io/repos/Alheimsins/b5-johnson-120-ipip-neo-pi-r/badge.svg?branch=main&service=github)](https://coveralls.io/github/Alheimsins/b5-johnson-120-ipip-neo-pi-r?branch=main)
 [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat)](https://github.com/feross/standard)
 
 # b5-johnson-120-ipip-neo-pi-r
 
-Module for returning Big Five [Johnson 120 IPIP-NEO-PI-R](http://ipip.ori.org/30FacetNEO-PI-RItems.htm) items
+Module for returning Big Five [Johnson 120 IPIP-NEO-PI-R](https://ipip.ori.org/30facetneo-pi-ritems.htm) items
 
 ## Installation
 
@@ -15,15 +14,19 @@ $ npm i @alheimsins/b5-johnson-120-ipip-neo-pi-r
 ## Usage
 
 ```JavaScript
-const { getItems, getInfo } = require('@alheimsins/b5-johnson-120-ipip-neo-pi-r')
+const { getItems, getInfo, getChoices, getQuestions } = require('@alheimsins/b5-johnson-120-ipip-neo-pi-r')
+
+console.log(getInfo()) // returns test info
+
+console.log(getChoices()) // returns choices in English
+
+console.log(getQuestions()) // returns questions in English
 
 console.log(getItems()) // returns English
 
 console.log(getItems('no')) // returns Norwegian
 
 console.log(getItems('en', true)) // returns English shuffeled
-
-console.log(getInfo()) // returns test info
 ```
 
 returns an [array with questions and choices](examples/items-en.json)
@@ -78,7 +81,7 @@ returns an [array with questions and choices](examples/items-en.json)
 | is   | Icelandic | Franz Jónas Arnar Arnarson and [Sigurður Kári Árnason](https://github.com/sigurdurkari) |
 | it   | Italian   | [Lorenzo Carducci](https://github.com/riourbana) |
 | nl   | Dutch     | Eus van Somerenk, Kim Dekker and Tessa Blanken |
-| se   | Swedish   | Martin Bäckström |
+| se   | Swedish   | Martin Bäckström / [SwedishBarbarossa](https://github.com/SwedishBarbarossa) |
 | hr   | Croatian  | Željko Jerneić |
 | fr   | French    | Mathew Gravel |
 | et   | Estonian  | René Mõttus, Helle Pullmann, Jüri Allik, Liina Haring, Kenn Konstabel, and Anu Realo |
@@ -92,12 +95,19 @@ returns an [array with questions and choices](examples/items-en.json)
 | fi   | Finnish   | [Anastasia Tapper](https://github.com/ankkukku) |
 | id   | Indonesian| [David Adi Nugroho](https://github.com/lakuapik) |
 | hi   | Hindi     | [Punit Singh](https://github.com/thepunitsingh) |
-| uk   | Ukrainian | [Elena Kunina](https://github.com/Menolas)
+| uk   | Ukrainian | [Elena Kunina](https://github.com/Menolas) |
+| ar   | Arabic    | Rayan Khan |
+| he   | Hebew     | Ben Perry |
+| pl   | Polish    | Maryla Królikowska |
+| ko   | Korean    | [TimeTREE](https://github.com/TimeTREE98) |
+| ro   | Romanian  | [Cătălin Topală](https://github.com/catalintopala)
+
 
 ## Help wanted
 
-If you want to help by translating the items to other languages this is how you do it.
+If you want to help by translating the items to other languages there are two ways to do it.
 
+### Translate on GitHub
 - clone the repo
 - find a language you know in [data](data)
 - duplicate the folder and rename it to the language you will translate
@@ -108,9 +118,14 @@ If you want to help by translating the items to other languages this is how you 
 - submit pull request
 - happiness :-)
 
+### Translate from the web
+- visit [b5.translations.alheimsins.net](https://b5.translations.alheimsins.net/b5-johnson-120-ipip-neo-pi-r)
+- follow the instructions
+- happiness :-)
+
 ## Related
 
-- [bigfive-web](https://github.com/maccyber/bigfive-web) Web frontend for bigfive tests
+- [bigfive-web](https://github.com/rubynor/bigfive-web) Web frontend for bigfive tests
 
 ## License
 
@@ -118,6 +133,6 @@ If you want to help by translating the items to other languages this is how you 
 
 ## About
 
-Created with <3 by [Alheimsins](https://github.com/Alheimsins)
+Created with ❤ for [Alheimsins](https://alheimsins.net)
 
-![Alheimsins symbol](https://file-qwoleuymtm.now.sh "Alheimsins symbol")
+<img src="https://image.ibb.co/dPH08G/logo_black.png" alt="Alheimsins logo" height="150px" width="150px" />
